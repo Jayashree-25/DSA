@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "totalProblems": 1,
+    "lastUpdated": "2025-08-29T11:55:17.005Z",
+    "breakdown": {
+      "Codechef": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      },
+      "Gfg": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      },
+      "Leetcode": {
+        "total": 1,
+        "Easy": 1,
+        "Medium": 0,
+        "Hard": 0
+      },
+      "Hackerrank": {
+        "total": 0,
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0
+      }
+    }
+  },
+  "problems": [
+    {
+      "id": "leetcode-easy-two-sum",
+      "platform": "Leetcode",
+      "difficulty": "Easy",
+      "problemName": "Two Sum",
+      "language": "java",
+      "files": {
+        "code": "class Solution {\n    public static int[] twoSum(int[] nums, int target) {\n        for(int i=0; i<nums.length; i++){\n            for(int j=i+1; j<nums.length; j++){\n                if(i != j){\n                    if((nums[i] + nums[j]) == target){\n                        return new int[]{i,j};\n                    }\n                }\n            }\n        }\n        return new int[]{};\n    }\n    public static void main(String[] args){\n        int[] nums = {3,4,5,6};\n        int target = 7;\n        int[] sol = twoSum(nums, target);\n        System.out.println(sol);\n    }\n}",
+        "readme": "ArrayHashTable\n\nGiven an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.\n\n \nExample 1:\n\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n\n\nExample 2:\n\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n\n\nExample 3:\n\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n\n\n \nConstraints:\n\n\n\t2 <= nums.length <= 104\n\t-109 <= nums[i] <= 109\n\t-109 <= target <= 109\n\tOnly one valid answer exists.\n\n\n \nFollow-up: Can you come up with an algorithm that is less than O(n2) time complexity?",
+        "notes": "Two Sum\n\n          - Summary: The code utilizes a single array to store input numbers. It employs nested loops to iterate through all possible pairs of numbers within the array.  For each pair, it checks if their sum equals the target value. If a pair with the target sum is found, their indices are returned; otherwise, an empty array is returned after checking all pairs.\n\n          - Time Complexity: O(n^2) because of the nested for loops, resulting in a time complexity proportional to the square of the input array's size.\n          - Space Complexity: O(1) as the algorithm uses a constant amount of extra space regardless of the input array size. The space used for storing the result array is also constant."
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": true,
+      "lastUpdated": "2025-08-29T11:55:17.003Z"
+    }
+  ]
+}
