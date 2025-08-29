@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 2,
-    "lastUpdated": "2025-08-29T13:38:53.265Z",
+    "totalProblems": 3,
+    "lastUpdated": "2025-08-29T13:41:22.488Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -16,8 +16,8 @@
         "Hard": 0
       },
       "Leetcode": {
-        "total": 2,
-        "Easy": 1,
+        "total": 3,
+        "Easy": 2,
         "Medium": 1,
         "Hard": 0
       },
@@ -30,6 +30,22 @@
     }
   },
   "problems": [
+    {
+      "id": "leetcode-easy-palindrome-number",
+      "platform": "Leetcode",
+      "difficulty": "Easy",
+      "problemName": "Palindrome Number",
+      "language": "java",
+      "files": {
+        "code": "class Solution {\n    public boolean isPalindrome(int x) {\n        if (x < 0 || (x % 10 == 0 && x != 0)) {\n            return false;\n        }\n        int reversed = 0;\n        while (x > reversed) {\n            reversed = reversed * 10 + x % 10;\n            x = x / 10;\n        }\n        return x == reversed || x == reversed / 10;\n    }\n}",
+        "readme": "Math\n\nGiven an integer x, return true if x is a palindrome, and false otherwise.\n\n \nExample 1:\n\nInput: x = 121\nOutput: true\nExplanation: 121 reads as 121 from left to right and from right to left.\n\n\nExample 2:\n\nInput: x = -121\nOutput: false\nExplanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.\n\n\nExample 3:\n\nInput: x = 10\nOutput: false\nExplanation: Reads 01 from right to left. Therefore it is not a palindrome.\n\n\n \nConstraints:\n\n\n\t-231 <= x <= 231 - 1\n\n\n \nFollow up: Could you solve it without converting the integer to a string?",
+        "notes": "Palindrome Number\n\n          - Summary: The function `isPalindrome` checks if an integer `x` is a palindrome. It uses no explicit data structures beyond built-in integer variables. The algorithm first handles negative numbers and numbers ending in zero (except 0). Then, it iteratively reverses the integer `x` while comparing it to the original until either the reversed number is greater than or equal to the original or the original is reduced to a single or zero digit.  Finally, it checks if the original and reversed numbers are equal or if the original number is equal to the reversed number divided by 10 to account for odd-length palindromes.\n\n          - Time Complexity: O(log10(x)) because the number of iterations in the while loop is proportional to the number of digits in x, which is logarithmic with respect to x. In each iteration, a constant number of operations are performed.\n          - Space Complexity: O(1) because the algorithm uses only a constant amount of extra space to store variables such as `reversed`, regardless of the size of the input integer x."
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": true,
+      "lastUpdated": "2025-08-29T13:41:22.473Z"
+    },
     {
       "id": "leetcode-easy-two-sum",
       "platform": "Leetcode",
@@ -44,7 +60,7 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:38:53.262Z"
+      "lastUpdated": "2025-08-29T13:41:22.474Z"
     },
     {
       "id": "leetcode-medium-add-two-numbers",
@@ -60,7 +76,7 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:38:53.263Z"
+      "lastUpdated": "2025-08-29T13:41:22.476Z"
     }
   ]
 }
