@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "totalProblems": 1,
-    "lastUpdated": "2025-08-29T11:55:17.005Z",
+    "totalProblems": 2,
+    "lastUpdated": "2025-08-29T13:38:53.265Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -16,9 +16,9 @@
         "Hard": 0
       },
       "Leetcode": {
-        "total": 1,
+        "total": 2,
         "Easy": 1,
-        "Medium": 0,
+        "Medium": 1,
         "Hard": 0
       },
       "Hackerrank": {
@@ -44,7 +44,23 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T11:55:17.003Z"
+      "lastUpdated": "2025-08-29T13:38:53.262Z"
+    },
+    {
+      "id": "leetcode-medium-add-two-numbers",
+      "platform": "Leetcode",
+      "difficulty": "Medium",
+      "problemName": "Add Two Numbers",
+      "language": "java",
+      "files": {
+        "code": "/**\n * Definition for singly-linked list.\n * public class ListNode {\n *     int val;\n *     ListNode next;\n *     ListNode() {}\n *     ListNode(int val) { this.val = val; }\n *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n * }\n */\nclass Solution {\n    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n        // Dummy head to make it easier to return the result\n        ListNode dummyHead = new ListNode(0);\n        ListNode current = dummyHead;\n\n        int carry = 0;\n\n        // Traverse both lists\n        while (l1 != null || l2 != null) {\n            // Get the values (0 if the node is null)\n            int x = (l1 != null) ? l1.val : 0;\n            int y = (l2 != null) ? l2.val : 0;\n\n            // Add values and carry\n            int sum = x + y + carry;\n            carry = sum / 10;\n\n            // Create a new node with the digit value\n            current.next = new ListNode(sum % 10);\n            current = current.next;\n\n            // Move to the next nodes\n            if (l1 != null) l1 = l1.next;\n            if (l2 != null) l2 = l2.next;\n        }\n\n        // If there's a carry left, add a new node\n        if (carry > 0) {\n            current.next = new ListNode(carry);\n        }\n\n        // Return the result, skipping the dummy head\n        return dummyHead.next;\n    }\n}",
+        "readme": "LinkedListMathRecursion\n\nYou are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.\n\n \nExample 1:\n\nInput: l1 = [2,4,3], l2 = [5,6,4]\nOutput: [7,0,8]\nExplanation: 342 + 465 = 807.\n\n\nExample 2:\n\nInput: l1 = [0], l2 = [0]\nOutput: [0]\n\n\nExample 3:\n\nInput: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]\nOutput: [8,9,9,9,0,0,0,1]\n\n\n \nConstraints:\n\n\n\tThe number of nodes in each linked list is in the range [1, 100].\n\t0 <= Node.val <= 9\n\tIt is guaranteed that the list represents a number that does not have leading zeros.",
+        "notes": "Add Two Numbers\n\n          - Summary: This Java code adds two numbers represented as linked lists. It uses the ListNode data structure to represent the numbers, where each node stores a digit. The algorithm iterates through both lists simultaneously, adding digits and handling carry-overs. A dummy head node simplifies the process of returning the resulting linked list.\n\n          - Time Complexity: O(max(m, n)), where m and n are the lengths of the two input linked lists. This is because the algorithm iterates through the lists once, performing constant-time operations at each step.\n          - Space Complexity: O(max(m, n)) in the worst case. This is because the resulting linked list can have a length of up to max(m, n) + 1 (to accommodate a potential carry-over).  The space used for other variables is constant."
+      },
+      "hasCode": true,
+      "hasReadme": true,
+      "hasNotes": true,
+      "lastUpdated": "2025-08-29T13:38:53.263Z"
     }
   ]
 }
