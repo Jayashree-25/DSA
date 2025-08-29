@@ -1,7 +1,7 @@
 {
   "metadata": {
     "totalProblems": 4,
-    "lastUpdated": "2025-08-29T13:44:54.787Z",
+    "lastUpdated": "2025-08-29T13:45:41.206Z",
     "breakdown": {
       "Codechef": {
         "total": 0,
@@ -44,7 +44,7 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:44:54.606Z"
+      "lastUpdated": "2025-08-29T13:45:41.177Z"
     },
     {
       "id": "leetcode-easy-two-sum",
@@ -60,7 +60,7 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:44:54.607Z"
+      "lastUpdated": "2025-08-29T13:45:41.178Z"
     },
     {
       "id": "leetcode-medium-add-two-numbers",
@@ -76,7 +76,7 @@
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:44:54.608Z"
+      "lastUpdated": "2025-08-29T13:45:41.180Z"
     },
     {
       "id": "leetcode-hard-median-of-two-sorted-arrays",
@@ -87,12 +87,12 @@
       "files": {
         "code": "class Solution {\n    public double findMedianSortedArrays(int[] nums1, int[] nums2) {\n        if (nums1.length > nums2.length) {\n            return findMedianSortedArrays(nums2, nums1);\n        }\n        int m = nums1.length;\n        int n = nums2.length;\n        int low = 0, high = m;\n\n        while (low <= high) {\n            int partitionX = (low + high) / 2;\n            int partitionY = (m + n + 1) / 2 - partitionX;\n\n            int maxLeftX = (partitionX == 0) ? Integer.MIN_VALUE : nums1[partitionX - 1];\n            int minRightX = (partitionX == m) ? Integer.MAX_VALUE : nums1[partitionX];\n\n            int maxLeftY = (partitionY == 0) ? Integer.MIN_VALUE : nums2[partitionY - 1];\n            int minRightY = (partitionY == n) ? Integer.MAX_VALUE : nums2[partitionY];\n\n            if (maxLeftX <= minRightY && maxLeftY <= minRightX) {\n                // Found the correct partition\n                if ((m + n) % 2 == 0) {\n                    return ((double)Math.max(maxLeftX, maxLeftY) + Math.min(minRightX, minRightY)) / 2;\n                } else {\n                    return (double)Math.max(maxLeftX, maxLeftY);\n                }\n            } else if (maxLeftX > minRightY) {\n                high = partitionX - 1;\n            } else {\n                low = partitionX + 1;\n            }\n        }\n        throw new IllegalArgumentException(\"Input arrays are not sorted.\");\n    }\n}",
         "readme": "ArrayBinarySearchDivideandConquer\n\nGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).\n\n \nExample 1:\n\nInput: nums1 = [1,3], nums2 = [2]\nOutput: 2.00000\nExplanation: merged array = [1,2,3] and median is 2.\n\n\nExample 2:\n\nInput: nums1 = [1,2], nums2 = [3,4]\nOutput: 2.50000\nExplanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.\n\n\n \nConstraints:\n\n\n\tnums1.length == m\n\tnums2.length == n\n\t0 <= m <= 1000\n\t0 <= n <= 1000\n\t1 <= m + n <= 2000\n\t-106 <= nums1[i], nums2[i] <= 106",
-        "notes": "Median of Two Sorted Arrays\n\n          - Summary: This Java code efficiently finds the median of two sorted arrays using binary search. It employs arrays as the primary data structure to store input numbers. The algorithm cleverly partitions the arrays to find the middle elements, handling both even and odd total element counts.  A key logic decision involves adjusting the binary search's boundaries based on whether the current partition satisfies the median condition.\n\n          - Time Complexity: O(log(min(m, n))), where 'm' and 'n' are the lengths of the input arrays. This is because the algorithm uses binary search on the smaller array, resulting in a logarithmic time complexity.\n          - Space Complexity: O(1). The algorithm uses a constant amount of extra space to store variables, irrespective of the input array sizes."
+        "notes": "Median of Two Sorted Arrays\n\n          - Summary: This Java code efficiently finds the median of two sorted arrays using a binary search approach.  It leverages arrays to store input data and employs a while loop with a binary search strategy to efficiently locate the partition point that divides the combined array into two halves with equal or near-equal elements. Based on this partition, it calculates and returns the median. The algorithm ensures that the longer array is always passed as the second argument, optimizing the search process.\n\n          - Time Complexity: O(log(min(m, n))), where m and n are the lengths of the input arrays. This is because the while loop performs a binary search on the smaller array, resulting in a logarithmic time complexity.\n          - Space Complexity: O(1). The algorithm uses a constant amount of extra space to store variables like low, high, partitionX, partitionY, maxLeftX, minRightX, maxLeftY, and minRightY.  The space used does not depend on the size of the input arrays."
       },
       "hasCode": true,
       "hasReadme": true,
       "hasNotes": true,
-      "lastUpdated": "2025-08-29T13:44:54.610Z"
+      "lastUpdated": "2025-08-29T13:45:41.182Z"
     }
   ]
 }
